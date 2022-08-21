@@ -20,4 +20,4 @@ spec:
           ports:
             - containerPort: 5432
       imagePullSecrets:
-        - name: mykey
+        - name: mykey1

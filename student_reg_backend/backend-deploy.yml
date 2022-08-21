@@ -23,4 +23,4 @@ spec:
             - name: PG_HOST 
               value: "postgres-db-service"
       imagePullSecrets:
-          - name: mykey
+          - name: mykey1
