@@ -16,7 +16,7 @@ spec:
     spec: 
       containers: 
         - name: student-frontend 
-          image: 012765396827.dkr.ecr.us-east-1.amazonaws.com/smithin-student-frontend-repo:latest
+          image: 012765396827.dkr.ecr.us-east-1.amazonaws.com/vishnu-ecr-frontend:latest
           ports:
             - containerPort: 8000
       imagePullSecrets: 

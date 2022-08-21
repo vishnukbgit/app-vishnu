@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: postgres-db
-          image: 012765396827.dkr.ecr.us-east-1.amazonaws.com/smithin-postgres-repo:latest
+          image: 012765396827.dkr.ecr.us-east-1.amazonaws.com/vishnu-ecr-db:latest
           ports:
             - containerPort: 5432
       imagePullSecrets:

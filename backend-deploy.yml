@@ -16,7 +16,7 @@ spec:
     spec: 
       containers: 
         - name: student-backend 
-          image: 012765396827.dkr.ecr.us-east-1.amazonaws.com/smithin-student-backend-repo:latest 
+          image: 012765396827.dkr.ecr.us-east-1.amazonaws.com/vishnu-ecr-backend:latest 
           ports:
             - containerPort: 5000
           env: 
