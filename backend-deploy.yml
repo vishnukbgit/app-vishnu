@@ -24,3 +24,4 @@ spec:
               value: "postgres-db-service"
       imagePullSecrets:
           - name: mykey1
+          
