@@ -2,7 +2,7 @@ FROM node:14.17.3
 WORKDIR /app
 COPY . .
 
-ENV REACT_APP_API_URL "http://student.smithin.com"
+ENV REACT_APP_API_URL "http://student.vishnu.com"
 
 RUN npm i
 
