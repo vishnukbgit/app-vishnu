@@ -1,0 +1,26 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: student-backend 
+  labels: 
+    app: student-backend 
+spec: 
+  replicas: 1 
+  selector: 
+    matchLabels: 
+      app: student-backend 
+  template: 
+    metadata: 
+      labels: 
+        app: student-backend 
+    spec: 
+      containers: 
+        - name: student-backend 
+          image: 012765396827.dkr.ecr.us-east-1.amazonaws.com/smithin-student-backend-repo:latest 
+          ports:
+            - containerPort: 5000
+          env: 
+            - name: PG_HOST 
+              value: "postgres-db-service"
+      imagePullSecrets:
+          - name: mykey

@@ -1,0 +1,23 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: student-frontend 
+  labels: 
+    app: student-frontend 
+spec: 
+  replicas: 1 
+  selector: 
+    matchLabels: 
+      app: student-frontend 
+  template: 
+    metadata: 
+      labels: 
+        app: student-frontend 
+    spec: 
+      containers: 
+        - name: student-frontend 
+          image: 012765396827.dkr.ecr.us-east-1.amazonaws.com/smithin-student-frontend-repo:latest
+          ports:
+            - containerPort: 8000
+      imagePullSecrets: 
+          - name: mykey

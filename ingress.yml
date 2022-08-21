@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1 
+kind: Ingress 
+metadata: 
+  name: student-ingress 
+  namespace: vishnu
+spec: 
+  ingressClassName: kong 
+  rules: 
+  - host: "student.vishnu.com" 
+    http: 
+      paths: 
+      - path: /api/ 
+        pathType: Prefix 
+        backend: 
+          service: 
+            name: student-backend-service
+            port: 
+              number: 5000 
+  - host: "student.vishnu.com" 
+    http: 
+      paths: 
+      - path: / 
+        pathType: Prefix 
+        backend: 
+          service: 
+            name: student-frontend-service 
+            port:  
+              number: 8000
