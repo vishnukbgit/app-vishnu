@@ -6,7 +6,7 @@ metadata:
 spec: 
   ingressClassName: kong 
   rules: 
-  - host: "factweavers.stud.com" 
+  - host: "vx2mj6r.com" 
     http: 
       paths: 
       - path: /api/ 
@@ -16,7 +16,7 @@ spec:
             name: student-backend-service
             port: 
               number: 5000 
-  - host: "factweavers.stud.com"  
+  - host: "vx2mj6r.com"  
     http: 
       paths: 
       - path: / 
