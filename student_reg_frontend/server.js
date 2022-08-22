@@ -9,3 +9,5 @@ app.get('/*', function (req, res) {
 });
 app.listen(PORT);
 console.log('production build is available at ', PORT);
+console.log(CONFIG.API_URL);
+console.log(CONFIG.API_VERSION);
