@@ -27,7 +27,8 @@ export class APIInstance {
      */
      axiosInstance() {
         this.api = axios.create({
-          baseURL: CONFIG.API_URL + CONFIG.API_VERSION + this.baseURL,
+          //baseURL: CONFIG.API_URL + CONFIG.API_VERSION + this.baseURL,
+          baseURL: CONFIG.API_VERSION + this.baseURL,
         });
         return this.api;
       }
