@@ -13,7 +13,7 @@ pipeline {
                 script {
                     
                     docker.withRegistry('https://012765396827.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:awscredentials') {
-                    def app = docker.build("012765396827.dkr.ecr.us-east-1.amazonaws.com/vishnu-ecr-db:$params.TAG .")
+                    def app = docker.build("012765396827.dkr.ecr.us-east-1.amazonaws.com/vishnu-ecr-db:$params.TAG" ".")
                         // build image
 
 
