@@ -7,26 +7,25 @@ pipeline {
         AWS_CREDENTIALS = credentials('awscredentials')
     }
     stages {
-       
+
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'cd ./new/'
+                    dir(new){
                     docker.withRegistry('https://012765396827.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:awscredentials') {
-                    sh 'cd ./new/'
+
                     sh 'ls -la'
 
                     def app = docker.build("012765396827.dkr.ecr.us-east-1.amazonaws.com/vishnu-ecr-db:$params.TAG")
-                        
+                
                         app.push()
-                        
+
+                    }
                     }
                 }
             }
 
         }
-    
-     
 
-}
+    }
 }
