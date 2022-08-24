@@ -19,11 +19,20 @@ pipeline {
 
                         // push image
                         app.push()
+                        echo "Pushed docker image"
                     }
                 }
             }
 
         }
     }
-}
+         stage('Deploying App to Kubernetes') {
+      steps {
+        script {
+          kubernetesDeploy(configs: "ingress.yml", kubeconfigId: "kubernetes")
+        }
+      }
+    }
+
+  }
 
