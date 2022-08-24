@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        
+
         GITHUB_CREDENTIALS = credentials('vishnukbgit')
         AWS_CREDENTIALS = credentials('awscredentials')
     }
@@ -11,8 +11,9 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    def app = docker.build('012765396827.dkr.ecr.us-east-1.amazonaws.com/vishnu-ecr-db:"${TAG}"')
+                    
                     docker.withRegistry('https://012765396827.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:awscredentials') {
+                        def app = docker.build('012765396827.dkr.ecr.us-east-1.amazonaws.com/vishnu-ecr-db:"${TAG}"')
                         // build image
 
 
