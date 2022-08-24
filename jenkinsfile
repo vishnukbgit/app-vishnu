@@ -11,7 +11,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    
+                    cd new
                     docker.withRegistry('https://012765396827.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:awscredentials') {
                     def app = docker.build("012765396827.dkr.ecr.us-east-1.amazonaws.com/vishnu-ecr-db:$params.TAG")
                         // build image
@@ -26,14 +26,7 @@ pipeline {
 
         }
     
-     stage('Deploying App to Kubernetes') {
-      steps {
-        script {
-          kubernetesDeploy(configs: "postgres-deploy.yml", kubeconfigId: "kubernetes")
-        }
-      }
-    }
-    }
+     
 
 }
-
+}
