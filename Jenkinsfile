@@ -4,7 +4,6 @@ pipeline {
     environment {
         GITHUB_CREDENTIALS = credentials('vishnukbgit')
         AWS_CREDENTIALS = credentials('awscredentials')
-        
     }
 
     stages {
@@ -20,15 +19,15 @@ pipeline {
                         }
                     }
                 }
+            }
+        }
 
-                stage('Deploying App to Kubernetes') {
-                    steps {
-                        script {
-                            kubernetesDeploy(configs: 'postgres-deploy.yml', kubeconfigId: 'kubernetes')
+        stage('Deploying App to Kubernetes') {
+            steps {
+                script {
+                    kubernetesDeploy(configs: 'postgres-deploy.yml', kubeconfigId: 'kubernetes')
                         }
                     }
                 }
-            }
-        }
     }
 }
