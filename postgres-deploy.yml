@@ -1,3 +1,13 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: kong
+  namespace: kong
+  labels:
+    name: kong
+---
+
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
