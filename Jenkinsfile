@@ -22,12 +22,12 @@ pipeline {
             }
         }
 
-        stage('Deploying App to Kubernetes') {
-            steps {
-                script {
-                    kubernetesDeploy(configs: 'postgres-deploy.yml', kubeconfigId: 'kubernetes')
-                        }
-                    }
-                }
-    }
+//         stage('Deploying App to Kubernetes') {
+//             steps {
+//                 script {
+//                     kubernetesDeploy(configs: 'postgres-deploy.yml', kubeconfigId: 'kubernetes')
+//                         }
+//                     }
+//                 }
+  }
 }
